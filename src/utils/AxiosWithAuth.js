@@ -5,6 +5,6 @@ export const axiosWithAuth =() => {
     headers: {
       Authorization: `Bearer ${token}`
     },
-    baseURL: 'http://localhost:2019'
+    baseURL: 'https://cors-anywhere.herokuapp.com/https://kmcgeeka-airbnboptimal.herokuapp.com'
   });
 };

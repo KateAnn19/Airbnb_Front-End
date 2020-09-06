@@ -1,9 +1,12 @@
 import React from 'react';
 import Register from './Register'
+import AirbnbRegistration from './AirbnbRegistration'
 import Login from './Login';
 import { Route, Link } from 'react-router-dom';
+import UserProfile from './UserProfile';
 // import { Button } from 'reactstrap';
 import './App.css'; 
+
 
 function App() {
 
@@ -22,8 +25,14 @@ function App() {
         <Route exact path='/register'>
           <Register />
         </Route>
+        <Route>
+          <AirbnbRegistration/>
+        </Route>
         <Route exact path='/login'>
           <Login />
+        </Route>
+        <Route exact path='/userprofile'>
+          <UserProfile />
         </Route>
       
         <Link className ='RegLink' to='/login'>
