@@ -18,7 +18,7 @@ const Dashboard = props => {
         axiosWithAuth()
             .get(`https://kmcgeeka-airbnboptimal.herokuapp.com/users/myinfo`)
             .then(res => {
-                console.log(res);
+                console.log("Here in dashboard",res);
                 setUserDetails(res.data);
             })
             .catch(err => {

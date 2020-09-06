@@ -270,12 +270,12 @@ section div iframe {
     background-image: url("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/6c9a9a99-9c38-417e-a7f5-a45ede9b3407-1532627926.jpg");
     background-position:center;
     background-size: cover;
-    height: 70px;
+    height: 180px;
 }
 footer h6 {
     width:10%;
     height: 37px;
-    margin-top: 2%;
+    margin-top: 5%;
     margin-left: 5%;
     color:#F5F5DC;
 }
@@ -284,7 +284,7 @@ footer nav {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin-top: 2%;
+    margin-top: -2.48%;
 }
 footer nav a{
     text-decoration: none;

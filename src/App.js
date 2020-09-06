@@ -4,8 +4,9 @@ import AirbnbRegistration from './AirbnbRegistration'
 import Login from './Login';
 import { Route, Link } from 'react-router-dom';
 import UserProfile from './UserProfile';
-// import { Button } from 'reactstrap';
-import './App.css'; 
+import Safety from './Safety';
+//import './App.css'; 
+import MarketPage from './MarketPage';
 
 
 function App() {
@@ -13,12 +14,15 @@ function App() {
   
   return (
     <>
-    <header>
+    {/* <header>
       <h1>landbnb</h1>
-    </header>
-    <div className='landbuttons'>
+    </header> */}
+    {/* <div> */}
+      <MarketPage/>
+      {/* <Safety/> */}
+
       
-        <Link className='RegLink' to='/register'>
+        {/* <Link className='RegLink' to='/register'>
           <button color="primary" size="lg"> Register Here </button>
         </Link>
       
@@ -38,8 +42,9 @@ function App() {
         <Link className ='RegLink' to='/login'>
           <button color="primary" size="lg">Already a user?</button>
         </Link>
-      
-    </div> 
+       */}
+       
+    {/* </div>  */}
     </>
   )
 }
