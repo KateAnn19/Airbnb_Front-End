@@ -5,7 +5,6 @@ import Login from './Login';
 import { Route, Link } from 'react-router-dom';
 import UserProfile from './UserProfile';
 import Safety from './Safety';
-//import './App.css'; 
 import MarketPage from './MarketPage';
 import HomePage from './HomePage';
 import About from './About';
@@ -33,33 +32,15 @@ function App() {
       <Route exact path="/login">
         <Login />
       </Route>
-      
-      {/* <header>
-      <h1>landbnb</h1>
-    </header> */}
-
-      {/* <Link className='RegLink' to='/register'>
-          <button color="primary" size="lg"> Register Here </button>
-        </Link> */}
-
-      
-
       <Route exact path="/register">
         <Register />
       </Route>
       <Route exact path="/register-airbnb">
         <AirbnbRegistration />
       </Route>
-      {/* <Route exact path='/login'>
-          <Login />
-        </Route> */}
       <Route exact path="/userprofile">
         <UserProfile />
       </Route>
-
-      {/* <Link className ='RegLink' to='/login'>
-          <button color="primary" size="lg">Already a user?</button>
-        </Link> */}
     </>
   );
 }
