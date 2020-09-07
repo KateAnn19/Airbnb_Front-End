@@ -1,22 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/styles/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
-      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
-      crossorigin="anonymous"
-    />
-    <title>Landbnb - About Us</title>
-  </head>
-  <body>
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { axiosWithAuth } from "./utils/AxiosWithAuth";
+import { Link, useHistory } from "react-router-dom";
+import './styles/style.scss'
+
+
+const About = () => {
+    
+    return (
+        <>
+    <body>
     <section id="about-header">
       <div class="logo-nav-container">
         <div class="logo">
@@ -24,17 +17,20 @@
           <h1>landbnb</h1>
         </div>
         <nav class="nav-container">
-          <a href="/">Home</a>
-          <a href="marketPage.html">Overview</a>
-          <a href="/safety.html">Safety</a>
-          <a href="/about.html">About Us</a>
-          <a href="/contactPage.html">Contact</a>
-          <a href="https://front-end-1-two.vercel.app/login">Get Started</a>
+          <Link to="/">Home</Link>
+          <Link to="/market">Overview</Link>
+          <Link to="/safety">Safety</Link>
+          <Link to="/about">About Us</Link>
+          <Link to="/contact">Contact</Link>
+          <Link to="/login">Get Started</Link>
+          {/* <Link href="https://front-end-1-two.vercel.app/login">Get Started</Link> */}
         </nav>
       </div>
       <div class="slogan-container">
         <div class="slogan">
           <h2>About Us</h2>
+          </div>
+        </div>
     </section>
     <section id="homepage-about">
       <div class="about-container">
@@ -44,7 +40,7 @@
               Meet the Team
             </h3>
           </div>
-        </div class="team">
+        </div>
           <div class="person">
             <div class="name-container">
               <img src="https://lumiere-a.akamaihd.net/v1/images/luke-skywalker-main_5a38c454_461eebf5.jpeg?region=0%2C0%2C1536%2C864&width=1200"
@@ -171,4 +167,8 @@
       </div>
     </section>
   </body>
-</html>
+        </>
+    
+    );
+  };
+  export default About;

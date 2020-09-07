@@ -18,12 +18,13 @@ const Safety = () => {
           <h1>landbnb</h1>
         </div>
         <nav class="nav-container">
-            <a href="/">Home</a>
-            <a href="marketPage.html">Overview</a>
-            <a href="/safety.html">Safety</a>
-            <a href="/about.html">About Us</a>
-            <a href="/contactPage.html">Contact</a>
-            <a href="https://front-end-1-two.vercel.app/login">Get Started</a>
+          <Link to="/">Home</Link>
+          <Link to="/market">Overview</Link>
+          <Link to="/safety">Safety</Link>
+          <Link to="/about">About Us</Link>
+          <Link to="/contact">Contact</Link>
+          <Link to="/login">Get Started</Link>
+          {/* <Link href="https://front-end-1-two.vercel.app/login">Get Started</Link> */}
         </nav>
       </div>
       <div class="slogan-container">
@@ -56,7 +57,7 @@ const Safety = () => {
     <section id="homepage-call-to-action">
       <div class="cta-text">
         <h3>Get started today!</h3>
-        <a href="https://front-end-1-two.vercel.app/login"><button>Sign Up</button></a>
+        <Link to= '/login'><button>Sign Up</button></Link>
       </div>
     </section>
     <section id="footer">

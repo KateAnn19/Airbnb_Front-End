@@ -4,20 +4,20 @@ import './style.css'
 
 
 const MarketPage = () => {
-    
     return (
         <>
         <body>
         <header class="headerMar">
         <h6>Landbnb</h6>
-          <nav>
-              <a href="/">Home</a>
-              <a href="marketPage.html">Overview</a>
-              <a href="safety.html">Safety</a>
-              <a href="about.html">About Us</a>
-              <a href="contactPage.html">Contact</a>
-              <a href="https://landbnblogreg.netlify.app">Get Started</a>     
-          </nav>
+        <nav>
+          <Link to="/">Home</Link>
+          <Link to="/market">Overview</Link>
+          <Link to="/safety">Safety</Link>
+          <Link to="/about">About Us</Link>
+          <Link to="/contact">Contact</Link>
+          <Link to="/login">Get Started</Link>
+          {/* <Link href="https://front-end-1-two.vercel.app/login">Get Started</Link> */}
+        </nav>
     </header>
     <section id="marketSection">
         <div>
@@ -45,15 +45,15 @@ const MarketPage = () => {
     </section>
     <footer class="marFooter">
         <h6>Landbnb</h6>
-          <nav>
-            
-            <a href="/">Home</a>
-            <a href="marketPage.html">Overview</a>
-            <a href="safety">Safety</a>
-            <a href="about.html">About Us</a>
-            <a href="contactPage.html">Contact</a>
-            <a href="https://landbnblogreg.netlify.app">Get Started</a>
-          </nav>
+        <nav class="nav-container">
+          <Link to="/">Home</Link>
+          <Link to="/market">Overview</Link>
+          <Link to="/safety">Safety</Link>
+          <Link to="/about">About Us</Link>
+          <Link to="/contact">Contact</Link>
+          <Link to="/login">Get Started</Link>
+          {/* <Link href="https://front-end-1-two.vercel.app/login">Get Started</Link> */}
+        </nav>
     </footer>
 </body>
 </>
