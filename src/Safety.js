@@ -57,7 +57,7 @@ const Safety = () => {
     <section id="homepage-call-to-action">
       <div class="cta-text">
         <h3>Get started today!</h3>
-        <Link to= '/login'><button>Sign Up</button></Link>
+        <Link to='/login'><button>Sign Up</button></Link>
       </div>
     </section>
     <section id="footer">

@@ -141,7 +141,9 @@ const About = () => {
     <section id="homepage-call-to-action">
       <div class="cta-text">
         <h3>Start making more money!</h3>
-        <a href="https://front-end-1-two.vercel.app/login"><button>Sign Up</button></a>
+        <Link to="/login">
+        <button>Sign Up</button>
+        </Link>
       </div>
     </section>
     <section id="footer">

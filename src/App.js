@@ -30,8 +30,10 @@ function App() {
       <Route exact path="/market">
         <MarketPage />
       </Route>
-      {/* <About/> */}
-      {/* <Contact/> */}
+      <Route exact path="/login">
+        <Login />
+      </Route>
+      
       {/* <header>
       <h1>landbnb</h1>
     </header> */}
@@ -40,7 +42,7 @@ function App() {
           <button color="primary" size="lg"> Register Here </button>
         </Link> */}
 
-      {/* login component */}
+      
 
       <Route exact path="/register">
         <Register />

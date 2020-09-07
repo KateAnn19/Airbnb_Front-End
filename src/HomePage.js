@@ -30,7 +30,9 @@ const HomePage = () => {
           <h2>Find the Optimal Price for Your Airbnb</h2>
         </div>
         <div class="header-button">
+          <Link to="/login">
         <button>Start for Free</button>
+        </Link>
           {/* <a href="https://front-end-1-two.vercel.app/login"></a> */}
         </div>
       </div>
@@ -78,7 +80,9 @@ const HomePage = () => {
     <section id="homepage-call-to-action">
       <div class="cta-text">
         <h3>Sign up now to increase your income!</h3>
-        <a href="https://front-end-1-two.vercel.app/login"><button>Sign Up</button></a>
+        <Link to="/login">
+        <button>Sign Up</button>
+        </Link>
       </div>
     </section>
     <section id="footer">
