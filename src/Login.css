@@ -18,10 +18,9 @@
   align-items: center;
 }
 
-.logo i{
+.logo i {
   padding: 3%;
 }
-
 
 .nav-container {
   display: flex;
@@ -30,7 +29,7 @@
   margin: 0 3% 0 0;
 }
 
-.nav-container a{
+.nav-container a {
   text-decoration: none;
   color: white;
   padding: 1%;
@@ -44,7 +43,6 @@
   text-decoration: none;
 }
 
-
 .Login {
   font-family: "Quicksand", sans-serif;
   border-radius: 25px;
@@ -56,20 +54,15 @@
   text-align: center;
 }
 
- .sign-in-banner{
-   
-    width: 380.5px;
-    height: 350px;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
+.sign-in-banner {
+  width: 380.5px;
+  height: 350px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-
-
-
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
-
 
 .container {
   background: rgba(43, 43, 43, 0.8);
@@ -97,8 +90,9 @@ h2 {
 
 p {
   color: #ddd;
-  font-size: 1.3rem;
+  font-size: 3rem;
   margin: 1rem 0;
+  font-weight: 300;
 }
 
 .forgot__password-container {
@@ -151,13 +145,11 @@ h3 {
 }
 
 a {
- 
   color: #1ec47b;
 }
 
 a:hover {
   color: #0fb66e;
-  
 }
 .input-container {
   margin: 1.5rem 0;
@@ -178,7 +170,6 @@ input {
 }
 .form-button:hover {
   background: #0fb66e;
-
 }
 .signup-form {
   display: flex;
@@ -193,7 +184,6 @@ input {
   justify-content: center;
   z-index: -1;
   opacity: 0;
-  
 }
 
 .slide-right {
