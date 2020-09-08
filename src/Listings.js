@@ -14,6 +14,7 @@ const Listings = ({ setIsEditing, setUserDetails, userDetails }) => {
     max = Math.floor(max);
     return Math.round(Math.random() * (max - min + 1) + min);
   };
+  
 
   const onDelete = (id) => {
     axiosWithAuth()
@@ -24,6 +25,7 @@ const Listings = ({ setIsEditing, setUserDetails, userDetails }) => {
           ...userDetails,
           list: userDetails.list.filter((list) => list.id !== id),
         });
+        window.location.reload(true);
         push("/dashboard");
       })
       .catch((err) => {
