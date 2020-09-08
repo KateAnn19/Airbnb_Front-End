@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { axiosWithAuth } from "../utils/AxiosWIthAuth";
+import { axiosWithAuth } from "../utils/AxiosWithAuth";
 
 const AddListing = ({ userDetails, values, type, isEditing, setIsEditing}) => {
     const [newListing, setNewListing] = useState({ ...values, city: "NYC" });

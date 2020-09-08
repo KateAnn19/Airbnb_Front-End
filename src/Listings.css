@@ -2,7 +2,7 @@
 
 .listings {
     /* text-align: center; */
-    margin-top: 70px;
+    margin-top: 80px;
     margin-left: auto;
     margin-right: auto;
     width: 70%;
@@ -27,6 +27,13 @@
 
   .price{
     font-size: 3rem;
+  }
+
+  .loader{
+    font-size: 2rem;
+    color: black;
+    margin-top: 5%;
+    margin-left: 48%;
   }
 
  
@@ -60,12 +67,12 @@
   .cards {
     /* display: flex; */
     /* flex-wrap: wrap; */
-    width: 30%;
+    width: 25%;
     padding: 60px;
     background-color: rgb(224, 198, 198);
     border-radius: 10px;
     color: black;
-    margin: 0 auto;
+    margin: 30px auto;
     text-align: center;
     text-transform: capitalize;
     /* border: 2px solid grey; */

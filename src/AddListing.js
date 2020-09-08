@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import { axiosWithAuth } from "./utils/AxiosWithAuth";
 import "./AddListing.css";
+import { Route, Link, useHistory } from "react-router-dom";
 
 const AddListing = ({ userDetails, values, type, isEditing, setIsEditing}) => {
     const [newListing, setNewListing] = useState({ ...values, city: "NYC" });
     const [message, setMessage] = useState("")
+    const { push } = useHistory();
+    
+
+    console.log("This is new Listing", newListing);
 
     const onSubmitHandler = e => {
         e.preventDefault();
@@ -33,6 +38,8 @@ const AddListing = ({ userDetails, values, type, isEditing, setIsEditing}) => {
                 setMessage("✅ Listing Updated")
                 setTimeout(() => {
                     setIsEditing(false);
+                    window.location.reload(true);
+                    push("/dashboard");
                 }, 1000);
             })
             .catch(err => {
@@ -47,6 +54,11 @@ const AddListing = ({ userDetails, values, type, isEditing, setIsEditing}) => {
                 // window.location.assign("/dashboard/profile")
                 setNewListing({})
                 setMessage("✅ Listing Added")
+                setTimeout(() => {
+                    setIsEditing(false);
+                    window.location.reload(true);
+                    push("/dashboard");
+                }, 1000);
             })
             .catch(err => {
                 console.log(err);

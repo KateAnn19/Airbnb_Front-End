@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { axiosWithAuth } from "../utils/AxiosWIthAuth";
 import AddListing from "./AddListing";
 
+
 const Profile = ({ userDetails, setUserDetails, isEditing, setIsEditing }) => {
   const [hidden, setHidden] = useState(true);
 

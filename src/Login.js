@@ -44,6 +44,7 @@ const Login = () => {
   const [disabled, setDisabled] = useState(initialDisabled);
   const [isError, setIsError] = useState(false);
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   //register
   const [formRegisValues, setFormRegisValues] = useState(initialFormRegisValues);
@@ -104,7 +105,11 @@ const Login = () => {
         //console.log(res);
         //console.log("Login -> res.data", res.data.payload);
         localStorage.setItem("token", res.data.access_token);
-        push("/dashboard");
+        setLoading(!loading);
+        setTimeout(() => {
+          push("/dashboard");
+          setLoading(!loading);
+        }, 2000);
       })
       .catch((error) => {
         setIsError(!isError);
@@ -134,7 +139,11 @@ const Login = () => {
     .then(res => {
       console.log(res);
       localStorage.setItem("token", res.data.access_token);
-      push("/dashboard");
+      setLoading(!loading);
+      setTimeout(() => {
+        push("/dashboard");
+        setLoading(!loading);
+      }, 2000);
     })
     .catch(err => {
       console.log(err);
@@ -219,120 +228,70 @@ const Login = () => {
           src="https://images.unsplash.com/photo-1451153378752-16ef2b36ad05?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1347&q=80"
         ></img>
       </div>
+      {loading ? <><div><h2>Loading....</h2></div></> :
       <div className="container">
-        <div className="signup-container">
-          <h2>Don't Have An Account?</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Necessitatibus veniam voluptas accusantium distinctio.
-          </p>
-          <button onClick={slideFunc} id="signup">
-            Create Account
-          </button>
-        </div>
-        <div className="signin-container">
-          <h2>Already Have An Account?</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Necessitatibus veniam voluptas accusantium distinctio.
-          </p>
-          <button onClick={slideFunc} id="login">
-            Login
-          </button>
-        </div>
-        <div
-          className={
-            toggle ? "overlay slide-right" : "overlay slide-right slide-left"
-          }
-          id="slide"
-        >
-          <div className="form-container signup-form">
-            <form action="" id="signup">
-              <h3>Create Account</h3>
-              <div className="social-container">
-                <a href="#" className="social">
-                  <i className="fab fa-facebook-f"></i>
-                </a>
-                <a href="#" className="social">
-                  <i className="fab fa-google-plus-g"></i>
-                </a>
-                <a href="#" className="social">
-                  <i className="fab fa-linkedin-in"></i>
-                </a>
-              </div>
-              <div className="input-container">
-                <input
-                  type="text"
-                  placeholder="Username...."
-                  id="username"
-                  name="username"
-                  maxLength="20"
-                  value={formRegisValues.username}
-                  onChange={onChangeRegis}
-                />
-              </div>
-              <div className="input-container">
-                <input
-                  id="primaryemail"
-                  name="primaryemail"
-                  type="text"
-                  placeholder="Email..."
-                  maxLength="30"
-                  value={formRegisValues.primaryemail}
-                  onChange={onChangeRegis}
-                />
-
-                <div className="input-container">
-                  <input
-                    placeholder="Password...."
-                    id="password"
-                    name="password"
-                    type="password"
-                    maxLength="20"
-                    value={formRegisValues.password}
-                    onChange={onChangeRegis}
-                  />
-                </div>
-              </div>
-              <button type="submit" className="form-button" onClick={handleRegisSubmit}>
-                Create Account
-              </button>
-            </form>
-            <div>
-              {formRegisErrors.username}
-              {formRegisErrors.password}
-              {formRegisErrors.primaryemail}
+      <div className="signup-container">
+        <h2>Don't Have An Account?</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Necessitatibus veniam voluptas accusantium distinctio.
+        </p>
+        <button onClick={slideFunc} id="signup">
+          Create Account
+        </button>
+      </div>
+      <div className="signin-container">
+        <h2>Already Have An Account?</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Necessitatibus veniam voluptas accusantium distinctio.
+        </p>
+        <button onClick={slideFunc} id="login">
+          Login
+        </button>
+      </div>
+      <div
+        className={
+          toggle ? "overlay slide-right" : "overlay slide-right slide-left"
+        }
+        id="slide"
+      >
+        <div className="form-container signup-form">
+          <form action="" id="signup">
+            <h3>Create Account</h3>
+            <div className="social-container">
+              <a href="#" className="social">
+                <i className="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" className="social">
+                <i className="fab fa-google-plus-g"></i>
+              </a>
+              <a href="#" className="social">
+                <i className="fab fa-linkedin-in"></i>
+              </a>
             </div>
-          </div>
+            <div className="input-container">
+              <input
+                type="text"
+                placeholder="Username...."
+                id="username"
+                name="username"
+                maxLength="20"
+                value={formRegisValues.username}
+                onChange={onChangeRegis}
+              />
+            </div>
+            <div className="input-container">
+              <input
+                id="primaryemail"
+                name="primaryemail"
+                type="text"
+                placeholder="Email..."
+                maxLength="30"
+                value={formRegisValues.primaryemail}
+                onChange={onChangeRegis}
+              />
 
-          <div
-            className="form-container signin-form"
-            style={{ zIndex: toggle ? "2" : "-1", opacity: toggle ? "1" : "0" }}
-          >
-            <form action="" id="signin">
-              <h3>Login</h3>
-              <div className="social-container">
-                <a href="#" className="social">
-                  <i className="fab fa-facebook-f"></i>
-                </a>
-                <a href="#Name" className="social">
-                  <i className="fab fa-google-plus-g"></i>
-                </a>
-                <a href="#Name" className="social">
-                  <i className="fab fa-linkedin-in"></i>
-                </a>
-              </div>
-              <div className="input-container">
-                <input
-                  type="text"
-                  id="username"
-                  name="username"
-                  maxLength="20"
-                  value={formValues.username}
-                  onChange={onChange}
-                  placeholder="Username...."
-                />
-              </div>
               <div className="input-container">
                 <input
                   placeholder="Password...."
@@ -340,41 +299,93 @@ const Login = () => {
                   name="password"
                   type="password"
                   maxLength="20"
-                  value={formValues.password}
-                  onChange={onChange}
+                  value={formRegisValues.password}
+                  onChange={onChangeRegis}
                 />
               </div>
-              <div className="forgot__password-container">
-                <a href="#">Forgot password? </a>
-              </div>
-              <button
-                onClick={handleSubmit}
-                disabled={disabled}
-                type="submit"
-                className="form-button"
-              >
-                Login
-              </button>
-            </form>
-            <div>
-              {" "}
-              {formErrors.username}
-              <br></br>
-              {formErrors.password}{" "}
             </div>
-            {
-              /* if error, show it */
-              isError ? (
-                <h3 className="error">{message}</h3>
-              ) : // if success message, show it
-              !isError && message ? (
-                <h6 className="error">{message}</h6>
-              ) : null
-            }
+            <button type="submit" className="form-button" onClick={handleRegisSubmit}>
+              Create Account
+            </button>
+          </form>
+          <div>
+            {formRegisErrors.username}
+            {formRegisErrors.password}
+            {formRegisErrors.primaryemail}
           </div>
         </div>
+
+        <div
+          className="form-container signin-form"
+          style={{ zIndex: toggle ? "2" : "-1", opacity: toggle ? "1" : "0" }}
+        >
+          <form action="" id="signin">
+            <h3>Login</h3>
+            <div className="social-container">
+              <a href="#" className="social">
+                <i className="fab fa-facebook-f"></i>
+              </a>
+              <a href="#Name" className="social">
+                <i className="fab fa-google-plus-g"></i>
+              </a>
+              <a href="#Name" className="social">
+                <i className="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+            <div className="input-container">
+              <input
+                type="text"
+                id="username"
+                name="username"
+                maxLength="20"
+                value={formValues.username}
+                onChange={onChange}
+                placeholder="Username...."
+              />
+            </div>
+            <div className="input-container">
+              <input
+                placeholder="Password...."
+                id="password"
+                name="password"
+                type="password"
+                maxLength="20"
+                value={formValues.password}
+                onChange={onChange}
+              />
+            </div>
+            <div className="forgot__password-container">
+              <a href="#">Forgot password? </a>
+            </div>
+            <button
+              onClick={handleSubmit}
+              disabled={disabled}
+              type="submit"
+              className="form-button"
+            >
+              Login
+            </button>
+          </form>
+          <div>
+            {" "}
+            {formErrors.username}
+            <br></br>
+            {formErrors.password}{" "}
+          </div>
+          {
+            /* if error, show it */
+            isError ? (
+              <h3 className="error">{message}</h3>
+            ) : // if success message, show it
+            !isError && message ? (
+              <h6 className="error">{message}</h6>
+            ) : null
+          }
+        </div>
       </div>
-    </>
+    </div>
+  }
+      </>
   );
 };
 export default Login;

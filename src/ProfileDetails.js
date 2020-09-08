@@ -6,14 +6,11 @@ import Listings from "./Listings";
 import AddListing from "./AddListing";
 
 const Profile = ({ userDetails, setUserDetails, isEditing, setIsEditing }) => {
-  console.log("In profile", userDetails);
  
-   
-    
-    
+ 
   return (
     <div className="profile">
-        <Listings setUserDetails={setUserDetails} setIsEditing={setIsEditing} userDetails={userDetails}/>
+        <Listings setUserDetails={setUserDetails} setIsEditing={setIsEditing} listings={userDetails.list} userDetails={userDetails}/>
     </div>
         )
 };
