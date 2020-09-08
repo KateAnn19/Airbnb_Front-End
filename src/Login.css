@@ -208,3 +208,8 @@ input {
   height: 4rem;
   width: 4rem;
 }
+
+.error{
+    color: darkslateblue;
+    font-size: 1rem;
+}

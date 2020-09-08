@@ -1,15 +1,17 @@
-import React from 'react';
-import Register from './Register'
-import AirbnbRegistration from './AirbnbRegistration'
-import Login from './Login';
-import { Route, Link } from 'react-router-dom';
-import UserProfile from './UserProfile';
-import Safety from './Safety';
-import MarketPage from './MarketPage';
-import HomePage from './HomePage';
-import About from './About';
-import Contact from './Contact';
-
+import React from "react";
+import Register from "./Register";
+import AirbnbRegistration from "./AirbnbRegistration";
+import Login from "./Login";
+import Logout from "./Logout";
+import { Route } from "react-router-dom";
+import Dashboard from "./Dashboard";
+import Safety from "./Safety";
+import MarketPage from "./MarketPage";
+import HomePage from "./HomePage";
+import About from "./About";
+import Contact from "./Contact";
+import PrivateRoute from "./utils/PrivateRoute";
+import Listings from "./Listings";
 
 function App() {
   return (
@@ -35,12 +37,13 @@ function App() {
       <Route exact path="/register">
         <Register />
       </Route>
-      <Route exact path="/register-airbnb">
-        <AirbnbRegistration />
-      </Route>
-      <Route exact path="/userprofile">
-        <UserProfile />
-      </Route>
+      <PrivateRoute exact path="/dashboard">
+        <Dashboard />
+      </PrivateRoute>
+     
+      <PrivateRoute exact path="/logout">
+        <Logout />
+      </PrivateRoute>
     </>
   );
 }
