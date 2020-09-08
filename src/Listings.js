@@ -167,10 +167,10 @@ const Listings = ({ setIsEditing, setUserDetails, userDetails, listings }) => {
   });
   return (
     <div>
-      {properties.length > 0 ? (
+      {properties.length ? (
         properties
       ) : (
-        <h2 className="loader">Loading....</h2>
+        <h2 className="loader">Future Listings....</h2>
       )}
       {edit && (
         <div className="cont">
