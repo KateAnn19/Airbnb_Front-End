@@ -39,7 +39,7 @@ const Dashboard = () => {
         </div>
         <nav className="nav-container">
         <a className="name" href="#">{userDetails.username}</a>
-          <Link to="/login">Logout</Link>
+          <Link to="/logout">Logout</Link>
         </nav>
       </div>
       <img className="dashboard-banner" alt="plane" src="https://images.unsplash.com/photo-1599126492701-4a1833776831?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"></img>

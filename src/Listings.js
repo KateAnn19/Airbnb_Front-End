@@ -55,8 +55,12 @@ const Listings = ({ setIsEditing, setUserDetails, userDetails }) => {
                 src="https://images.unsplash.com/photo-1516281717304-181e285c6e58?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
                 alt=""
               />
+              <div className="utils-cont">
               <button className="utils" onClick={() => onDelete(list.listingid)}><i class="fa fa-trash"></i></button>
+              </div>
+              <div className="utils-cont">
               <button className="utils" onClick={() => {setIsEditing(true);}}><i class="fa fa-pencil"></i></button>
+              </div>
               <div className="listing-info">
                 <div>
                   <i class="fas fa-map-pin ci-listing-card_icontray_wrap__icon"></i>
@@ -93,7 +97,7 @@ const Listings = ({ setIsEditing, setUserDetails, userDetails }) => {
                   <i class="fas fa-user-circle ci-listing-card_icontray_wrap__icon"></i>
                   {list.accomodates}
                 </div>
-                <div>
+                <div className="price">
                   <i class="fas fa-dollar-sign ci-listing-card_icontray_wrap__icon price"></i>
                   {list.price === "click for price"
                     ? `${UseRandom(50, 100)}.00`

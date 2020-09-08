@@ -41,9 +41,9 @@ function App() {
         <Dashboard />
       </PrivateRoute>
      
-      <PrivateRoute exact path="/logout">
+      <Route exact path="/logout">
         <Logout />
-      </PrivateRoute>
+      </Route>
     </>
   );
 }
