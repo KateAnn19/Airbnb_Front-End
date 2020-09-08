@@ -6,12 +6,12 @@ import ProfileDetails from "./ProfileDetails";
 import "./Dashboard.css";
 
 import { axiosWithAuth } from "./utils/AxiosWithAuth";
+import AddListing from "./AddListing";
 
 
 const Dashboard = () => {
   const [userDetails, setUserDetails] = useState({});
   const [isEditing, setIsEditing] = useState(false);
-  console.log(userDetails);
   const { push } = useHistory();
 
   useEffect(() => {
@@ -26,6 +26,10 @@ const Dashboard = () => {
       });
   }, []);
 
+   function add(){
+     setIsEditing(!isEditing);
+   }
+
   return (
     <>
       <div className="logo-nav-container">
@@ -34,20 +38,17 @@ const Dashboard = () => {
           <h1>landbnb</h1>
         </div>
         <nav className="nav-container">
-          <Link to="/">Home</Link>
-          <Link to="/safety">Safety</Link>
-          <Link to="/contact">Contact</Link>
-          <Link to="/logout">Logout</Link>
-          <a className="user-name" href="#">
-            {userDetails.username}
-          </a>
-          {/* <Link href="https://front-end-1-two.vercel.app/login">Get Started</Link> */}
+        <a className="name" href="#">{userDetails.username}</a>
+          <Link to="/login">Logout</Link>
         </nav>
       </div>
-      <div className="dashboard">
-        <h1>Welcome,</h1>
+      <img className="dashboard-banner" alt="plane" src="https://images.unsplash.com/photo-1599126492701-4a1833776831?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"></img>
+      <div className="main-wrapper">
+        <i onClick={add} class="material-icons">+</i>
       </div>
 
+      {isEditing ? <AddListing/> : null}
+      
       <ProfileDetails
         userDetails={userDetails}
         setUserDetails={setUserDetails}

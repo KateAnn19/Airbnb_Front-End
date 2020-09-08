@@ -13,11 +13,7 @@ const Profile = ({ userDetails, setUserDetails, isEditing, setIsEditing }) => {
     
   return (
     <div className="profile">
-        <h2 className={"user-name"}>{userDetails.username}</h2>
         <Listings setUserDetails={setUserDetails} setIsEditing={setIsEditing} userDetails={userDetails}/>
-        <h2>Add Listing</h2>
-        <button></button>
-        <AddListing/>
     </div>
         )
 };
