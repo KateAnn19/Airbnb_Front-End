@@ -1,22 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/styles/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
-      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
-      crossorigin="anonymous"
-    />
-    <title>Landbnb - Safety </title>
-  </head>
-  <body>
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { axiosWithAuth } from "./utils/AxiosWithAuth";
+import { Link, useHistory } from "react-router-dom";
+import './styles/style.scss'
+
+
+const Safety = () => {
+    
+      
+    return (
+    <div>
+    <body>
     <section id="safety-header">
       <div class="logo-nav-container">
         <div class="logo">
@@ -24,17 +18,20 @@
           <h1>landbnb</h1>
         </div>
         <nav class="nav-container">
-            <a href="/">Home</a>
-            <a href="marketPage.html">Overview</a>
-            <a href="/safety.html">Safety</a>
-            <a href="/about.html">About Us</a>
-            <a href="/contactPage.html">Contact</a>
-            <a href="https://front-end-1-two.vercel.app/login">Get Started</a>
+          <Link to="/">Home</Link>
+          <Link to="/market">Overview</Link>
+          <Link to="/safety">Safety</Link>
+          <Link to="/about">About Us</Link>
+          <Link to="/contact">Contact</Link>
+          <Link to="/login">Get Started</Link>
+          {/* <Link href="https://front-end-1-two.vercel.app/login">Get Started</Link> */}
         </nav>
       </div>
       <div class="slogan-container">
         <div class="slogan">
           <h2>Safety</h2>
+        </div>
+        </div>
     </section>
     <section id="homepage-about">
       <div class="about-container">
@@ -60,7 +57,7 @@
     <section id="homepage-call-to-action">
       <div class="cta-text">
         <h3>Get started today!</h3>
-        <a href="https://front-end-1-two.vercel.app/login"><button>Sign Up</button></a>
+        <Link to='/login'><button>Sign Up</button></Link>
       </div>
     </section>
     <section id="footer">
@@ -86,4 +83,7 @@
       </div>
     </section>
   </body>
-</html>
+</div>
+    );
+  };
+  export default Safety;

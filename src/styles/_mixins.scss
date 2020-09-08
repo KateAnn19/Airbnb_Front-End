@@ -14,6 +14,7 @@
   font-size: 2.5rem;
   margin: 0 0 0 3%;
   width: 10%;
+  color: $primaryTextColor;
   i {
     padding: 3%;
   }
@@ -32,8 +33,9 @@
   color: $primaryTextColor;
   border-radius: 10px;
   border: none;
-  padding: 1%;
+  width: 200px;
   font-size: 1.5rem;
+  height: 4rem;
 }
 
 @mixin aboutImage {

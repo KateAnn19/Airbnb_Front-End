@@ -102,13 +102,15 @@ h3 {
 }
 
 //About Us
-
 .person {
   @include flexCenter(row, flex-start);
-  font-size: 1.8rem;
+  font-size: 1.2rem;
+  //new
+  font-family: Quicksand, sans-serif;
   img {
     @include aboutUsImage;
   }
+  
   h4 {
     text-align: center;
     margin: 0 0 10% 0;
@@ -118,6 +120,10 @@ h3 {
   .bio-container {
     padding: 0 0 0 5%;
   }
+}
+//new
+.slogan {
+  color: $primaryTextColor;
 }
 
 @import "./media-queries";

@@ -1,0 +1,20 @@
+.add-listing{
+    margin: 50px 500px 100px 500px;
+}
+
+.add_listing_form{
+    margin-left: 20%;
+}
+
+
+input[type='checkbox']{
+width: 40px;
+height: 25px;
+zoom: 1;
+margin-top: 3%;
+margin-right: 51%;  
+}
+
+ul{
+list-style-type: none;
+}

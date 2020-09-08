@@ -31,16 +31,19 @@
   .slogan-container {
     @include flexCenter(column, center);
     margin: 15% 0 10% 0;
+   
     .slogan {
       padding: 2%;
       font-size: 3rem;
+      color: $primaryTextColor;
     }
     .header-button {
       @include flexCenter(row, center);
       width: 100%;
-      a {
-        @include primaryButton();
+      
+        
         button {
+          @include primaryButton();
           border: none;
           font-size: 1.5rem;
           background-color: $backgroundColorPink;
@@ -49,7 +52,19 @@
         button:hover {
           font-size: 1.7rem;
         }
-      }
+  
+      // a {
+      //   @include primaryButton();
+      //   button {
+      //     border: none;
+      //     font-size: 1.5rem;
+      //     background-color: $backgroundColorPink;
+      //     color: $primaryTextColor;
+      //   }
+      //   button:hover {
+      //     font-size: 1.7rem;
+      //   }
+      // }
     }
   }
 }
