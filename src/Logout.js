@@ -10,7 +10,7 @@ const Logout = () => {
       }, 1000)
 
 
-  return (<h1>Thanks for Visiting Landbnb</h1>);
+  return (<div className="logout"><h1>Thanks for Visiting Landbnb</h1></div>);
 };
 
 export default Logout;

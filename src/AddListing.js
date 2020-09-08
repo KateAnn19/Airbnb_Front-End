@@ -4,7 +4,7 @@ import "./AddListing.css";
 import { Route, Link, useHistory } from "react-router-dom";
 
 const AddListing = ({ userDetails, values, type, isEditing, setIsEditing}) => {
-    const [newListing, setNewListing] = useState({ ...values, city: "NYC" });
+    const [newListing, setNewListing] = useState({ ...values});
     const [message, setMessage] = useState("")
     const { push } = useHistory();
     
@@ -13,7 +13,6 @@ const AddListing = ({ userDetails, values, type, isEditing, setIsEditing}) => {
 
     const onSubmitHandler = e => {
         e.preventDefault();
-
         const req = {
             reviewscoresrating: 4,
             accomodates: parseInt(newListing.accomodates),
@@ -22,49 +21,25 @@ const AddListing = ({ userDetails, values, type, isEditing, setIsEditing}) => {
             bedrooms: parseInt(newListing.bedrooms),
             ...newListing
         }
-
-        console.log(req);
-
         // PATCH https://kmcgeeka-airbnboptimal.herokuapp.com/listings/listing/{listingid}
         // POST  https://kmcgeeka-airbnboptimal.herokuapp.com/listings/listing/create
+        axiosWithAuth()
+        .post(`/listings/listing/create`, req)
+        .then(res => {
+            console.log(res);
+            setNewListing({})
+            setMessage("✅ Listing Added")
+            setTimeout(() => {
+                setIsEditing(false);
+                window.location.reload(true);
+                push("/dashboard");
+            }, 1000);
+        })
+        .catch(err => {
+            console.log(err);
+            setMessage("❌ An error has occured")
+        })
 
-        if (type === "PATCH") {
-            axiosWithAuth()
-            .patch(`/listings/listing/${values.listingid}`, req)
-            .then(res => {
-                console.log(res);
-                // window.location.assign("/dashboard/profile")
-                setNewListing({})
-                setMessage("✅ Listing Updated")
-                setTimeout(() => {
-                    setIsEditing(false);
-                    window.location.reload(true);
-                    push("/dashboard");
-                }, 1000);
-            })
-            .catch(err => {
-                console.log(err);
-                setMessage("❌ An error has occured")
-            })
-        } else {
-            axiosWithAuth()
-            .post(`/listings/listing/create`, req)
-            .then(res => {
-                console.log(res);
-                // window.location.assign("/dashboard/profile")
-                setNewListing({})
-                setMessage("✅ Listing Added")
-                setTimeout(() => {
-                    setIsEditing(false);
-                    window.location.reload(true);
-                    push("/dashboard");
-                }, 1000);
-            })
-            .catch(err => {
-                console.log(err);
-                setMessage("❌ An error has occured")
-            })
-        }
     }
 
     const onChangeHandler = e => {
@@ -127,14 +102,8 @@ const AddListing = ({ userDetails, values, type, isEditing, setIsEditing}) => {
                 <label htmlFor="tv">TV:</label>
                 <input name="tv" type="checkbox" onChange={onCheckChangeHandler} />
                 <label className="TTS_ONLY" htmlFor="city" />
-                <select>
-                    <option value="nyc">New York City</option>
-                    <option value="la">Los Angeles</option>
-                    <option value="dc">Washington DC</option>
-                    <option value="chicago">Chicago</option>
-                    <option value="boston">Boston</option>
-                    <option value="sf">San Franscisco</option>
-                </select>
+                <input  name="city" type="text" placeholder="City" onChange={onChangeHandler} value={newListing.city}>
+                </input>
             </div>
             <button className="add_listing_form" type="submit">Submit</button>
         </form>

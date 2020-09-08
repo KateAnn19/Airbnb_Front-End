@@ -105,11 +105,12 @@ const Login = () => {
         //console.log(res);
         //console.log("Login -> res.data", res.data.payload);
         localStorage.setItem("token", res.data.access_token);
-        setLoading(!loading);
-        setTimeout(() => {
-          push("/dashboard");
-          setLoading(!loading);
-        }, 2000);
+        push("/dashboard");
+        // setLoading(!loading);
+        // setTimeout(() => {
+        //   push("/dashboard");
+        //   setLoading(!loading);
+        // }, 1000);
       })
       .catch((error) => {
         setIsError(!isError);
@@ -139,11 +140,12 @@ const Login = () => {
     .then(res => {
       console.log(res);
       localStorage.setItem("token", res.data.access_token);
-      setLoading(!loading);
-      setTimeout(() => {
-        push("/dashboard");
-        setLoading(!loading);
-      }, 2000);
+      push("/dashboard");
+      // setLoading(!loading);
+      // setTimeout(() => {
+      //   push("/dashboard");
+      //   setLoading(!loading);
+      // }, 1000);
     })
     .catch(err => {
       console.log(err);
